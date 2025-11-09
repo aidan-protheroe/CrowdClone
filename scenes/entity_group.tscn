@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbafgonlpw6g7"]
+
+[ext_resource type="Script" uid="uid://bqnu7fajrs1gp" path="res://scripts/entity_group.gd" id="1_v664o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v664o"]
+size = Vector2(150, 150)
+
+[node name="EntityGroup" type="Node2D"]
+script = ExtResource("1_v664o")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v664o")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

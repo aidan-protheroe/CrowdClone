@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cghsd30pdcacr"]
+
+[ext_resource type="Script" uid="uid://cnolwn8d2kytr" path="res://scripts/world.gd" id="1_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://bbafgonlpw6g7" path="res://scenes/entity_group.tscn" id="1_rwgxs"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_4wyf3")
+
+[node name="PlayerGroup" parent="." instance=ExtResource("1_rwgxs")]
+position = Vector2(552, 1182)
+
+[node name="BarrierSpawnTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="BarrierSpawnTimer" to="." method="_on_barrier_spawn_timer_timeout"]
