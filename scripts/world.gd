@@ -23,6 +23,7 @@ var smashed_barriers: int = 0
 func _ready() -> void:
 	# called when the node enters the scene tree for the first time
 	player_group.on_barrier_smashed.connect(_increase_barrier_health_range)
+	player_group.on_dead.connect(func(): get_tree().reload_current_scene())
 
 func _process(_delta: float) -> void:
 	# called every frame. delta is time since last frame
@@ -50,7 +51,7 @@ func _on_barrier_spawn_timer_timeout() -> void:
 func _increase_barrier_health_range() -> void:
 	# increases the barrier health range, very simple difficulty scaling rn
 	smashed_barriers += 1
-	barrier_health_range[0] -= smashed_barriers * 200
-	barrier_health_range[1] -= smashed_barriers * 100
+	barrier_health_range[0] -= smashed_barriers * 150
+	barrier_health_range[1] -= smashed_barriers * 25
 
 # each time the player succesfully absorbs a barrier, increase the barrier health range

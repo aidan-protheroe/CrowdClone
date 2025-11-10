@@ -3,6 +3,7 @@ class_name EntityGroup extends Node2D
 
 # signals
 signal on_barrier_smashed
+signal on_dead
 # variables
 #  @export 
 @export var starting_entities: int = 1
@@ -92,6 +93,9 @@ func _add_entities(amount: int) -> void:
 	
 func _remove_entities(amount: int) -> void:
 	# removes the given amount of entities from the group
+	if amount >= entities.size():
+		on_dead.emit()
+		return
 	for _i in range(amount):
 		var entity: Entity = entities.pop_back()
 		entity.queue_free()
