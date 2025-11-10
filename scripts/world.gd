@@ -13,15 +13,16 @@ const BARRIER_AMOUNT_RANGE: Vector2i = Vector2i(1, 3)
 #  stats
 #   barriers
 var barrier_speed: float = 100.0
-var barrier_health_range: Array[int] = [-25, -10]
+var barrier_health_range: Array[int] = [-25, -15]
 #  data
 #   barriers
 var barrier_x_positions: Array[float] = [1080.0 / 3.0 - 100, 1080.0 / 3.0 * 2.0 - 200, 1080.0 - 300] # make this less messy
 var barrier_spawn_time_options: Vector2i = Vector2i(5, 10)
+var smashed_barriers: int = 0
 
 func _ready() -> void:
 	# called when the node enters the scene tree for the first time
-	pass
+	player_group.on_barrier_smashed.connect(_increase_barrier_health_range)
 
 func _process(_delta: float) -> void:
 	# called every frame. delta is time since last frame
@@ -46,5 +47,10 @@ func _on_barrier_spawn_timer_timeout() -> void:
 	barrier_spawn_timer.wait_time = randi_range(barrier_spawn_time_options.x, barrier_spawn_time_options.y)
 	barrier_spawn_timer.start()
 
+func _increase_barrier_health_range() -> void:
+	# increases the barrier health range, very simple difficulty scaling rn
+	smashed_barriers += 1
+	barrier_health_range[0] -= smashed_barriers * 200
+	barrier_health_range[1] -= smashed_barriers * 100
 
 # each time the player succesfully absorbs a barrier, increase the barrier health range

@@ -8,7 +8,7 @@ var speed: float
 
 func _ready() -> void:
 	# called when the node enters the scene tree for the first time
-	pass
+	health_label.text = str(health)
 
 func _process(delta: float) -> void:
 	# called every frame. delta is time since last frame

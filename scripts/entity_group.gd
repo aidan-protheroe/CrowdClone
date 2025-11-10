@@ -1,6 +1,8 @@
 class_name EntityGroup extends Node2D
 # class that currently acts as the player controller, manages a group of individual entities
 
+# signals
+signal on_barrier_smashed
 # variables
 #  @export 
 @export var starting_entities: int = 1
@@ -26,7 +28,7 @@ var group_size = Vector2(150, 150)
 
 func _ready() -> void:
 	# called when the node enters the scene tree for the first time
-	update_entities(starting_entities)
+	_update_entities(starting_entities)
 
 func _process(delta: float) -> void:
 	# called every frame. delta is time since last frame
@@ -67,38 +69,38 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		var barrier: Barrier = area.get_parent()
 		var barrier_health: int = barrier.health
 		barrier.queue_free()
-		update_entities(barrier_health)
+		_update_entities(barrier_health)
 
-func update_entities(amount: int) -> void:
+func _update_entities(amount: int) -> void:
 	# base method for adding or removing entities, given a positive or negative amount
 	if amount == 0:
 		return
 	elif amount > 0:
-		add_entities(amount)
+		on_barrier_smashed.emit()
+		_add_entities(amount)
 	elif amount < 0:
-		remove_entities(-amount)
+		_remove_entities(-amount)
 
-	call_deferred("place_entities")
+	_place_entities()
 
-func add_entities(amount: int) -> void:
+func _add_entities(amount: int) -> void:
 	# adds the given amount of entities to the group
 	for _i in range(amount):
 		var entity: Entity = entity_scene.instantiate()
 		entities.append(entity)
 		call_deferred("add_child", entity)
 	
-func remove_entities(amount: int) -> void:
+func _remove_entities(amount: int) -> void:
 	# removes the given amount of entities from the group
 	for _i in range(amount):
 		var entity: Entity = entities.pop_back()
 		entity.queue_free()
 		entities.erase(entity)
 
-func place_entities() -> void:
+func _place_entities() -> void:
 	# places the entities in a properly sized grid after the amount of entities has changed, using a tween for smooth movement
-	var x: int = 0
-	var y: int = 0
 
+	# math magic
 	var sqroot: float = sqrt(entities.size())
 	var cols: int = ceil(sqroot)
 	var rows: int = ceil((float)(entities.size()) / cols)
@@ -107,12 +109,9 @@ func place_entities() -> void:
 
 	for row in range(rows):
 		for col in range(cols):
-			var pos: Vector2 = Vector2(group_size.x / rows * x, group_size.y / cols * y)
+			var pos: Vector2 = Vector2(group_size.x / rows * row, group_size.y / cols * col)
 			positions.append(pos)
-			x += 1
-		x = 0
-		y += 1
-
+	
 	var tween: Tween = create_tween()
 
 	for i in range(entities.size()):

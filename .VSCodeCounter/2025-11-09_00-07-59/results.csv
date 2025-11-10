@@ -1,0 +1,15 @@
+"filename", "language", "gdscript", "GDResource", "XML", "GDScene", "comment", "blank", "total"
+"c:\GameDev\Godot-Projects\crowd\icon.svg", "XML", 0, 0, 1, 0, 0, 1, 2
+"c:\GameDev\Godot-Projects\crowd\icon.svg.import", "GDResource", 0, 38, 0, 0, 0, 6, 44
+"c:\GameDev\Godot-Projects\crowd\project.godot", "GDResource", 0, 11, 0, 0, 7, 8, 26
+"c:\GameDev\Godot-Projects\crowd\scenes\barrier.tscn", "GDScene", 0, 0, 0, 23, 0, 10, 33
+"c:\GameDev\Godot-Projects\crowd\scenes\bullet.tscn", "GDScene", 0, 0, 0, 14, 0, 8, 22
+"c:\GameDev\Godot-Projects\crowd\scenes\entity.tscn", "GDScene", 0, 0, 0, 13, 0, 8, 21
+"c:\GameDev\Godot-Projects\crowd\scenes\entity_group.tscn", "GDScene", 0, 0, 0, 10, 0, 7, 17
+"c:\GameDev\Godot-Projects\crowd\scenes\world.tscn", "GDScene", 0, 0, 0, 11, 0, 6, 17
+"c:\GameDev\Godot-Projects\crowd\scripts\barrier.gd", "gdscript", 14, 0, 0, 0, 4, 8, 26
+"c:\GameDev\Godot-Projects\crowd\scripts\bullet.gd", "gdscript", 4, 0, 0, 0, 2, 2, 8
+"c:\GameDev\Godot-Projects\crowd\scripts\entity.gd", "gdscript", 1, 0, 0, 0, 0, 1, 2
+"c:\GameDev\Godot-Projects\crowd\scripts\entity_group.gd", "gdscript", 78, 0, 0, 0, 22, 20, 120
+"c:\GameDev\Godot-Projects\crowd\scripts\world.gd", "gdscript", 26, 0, 0, 0, 14, 11, 51
+"Total", "-", 123, 49, 1, 71, 49, 96, 389

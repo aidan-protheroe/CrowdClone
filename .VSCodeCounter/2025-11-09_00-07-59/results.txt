@@ -1,0 +1,43 @@
+Date : 2025-11-09 00:07:59
+Directory : c:\GameDev\Godot-Projects\crowd
+Total : 13 files,  244 codes, 49 comments, 96 blanks, all 389 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| gdscript   |          5 |        123 |         42 |         42 |        207 |
+| GDScene    |          5 |         71 |          0 |         39 |        110 |
+| GDResource |          2 |         49 |          7 |         14 |         70 |
+| XML        |          1 |          1 |          0 |          1 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                     | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                        |         13 |        244 |         49 |         96 |        389 |
+| . (Files)                                                |          3 |         50 |          7 |         15 |         72 |
+| scenes                                                   |          5 |         71 |          0 |         39 |        110 |
+| scripts                                                  |          5 |        123 |         42 |         42 |        207 |
++----------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                 | language   | code       | comment    | blank      | total      |
++----------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\GameDev\Godot-Projects\crowd\icon.svg                 | XML        |          1 |          0 |          1 |          2 |
+| c:\GameDev\Godot-Projects\crowd\icon.svg.import          | GDResource |         38 |          0 |          6 |         44 |
+| c:\GameDev\Godot-Projects\crowd\project.godot            | GDResource |         11 |          7 |          8 |         26 |
+| c:\GameDev\Godot-Projects\crowd\scenes\barrier.tscn      | GDScene    |         23 |          0 |         10 |         33 |
+| c:\GameDev\Godot-Projects\crowd\scenes\bullet.tscn       | GDScene    |         14 |          0 |          8 |         22 |
+| c:\GameDev\Godot-Projects\crowd\scenes\entity.tscn       | GDScene    |         13 |          0 |          8 |         21 |
+| c:\GameDev\Godot-Projects\crowd\scenes\entity_group.tscn | GDScene    |         10 |          0 |          7 |         17 |
+| c:\GameDev\Godot-Projects\crowd\scenes\world.tscn        | GDScene    |         11 |          0 |          6 |         17 |
+| c:\GameDev\Godot-Projects\crowd\scripts\barrier.gd       | gdscript   |         14 |          4 |          8 |         26 |
+| c:\GameDev\Godot-Projects\crowd\scripts\bullet.gd        | gdscript   |          4 |          2 |          2 |          8 |
+| c:\GameDev\Godot-Projects\crowd\scripts\entity.gd        | gdscript   |          1 |          0 |          1 |          2 |
+| c:\GameDev\Godot-Projects\crowd\scripts\entity_group.gd  | gdscript   |         78 |         22 |         20 |        120 |
+| c:\GameDev\Godot-Projects\crowd\scripts\world.gd         | gdscript   |         26 |         14 |         11 |         51 |
+| Total                                                    |            |        244 |         49 |         96 |        389 |
++----------------------------------------------------------+------------+------------+------------+------------+------------+
